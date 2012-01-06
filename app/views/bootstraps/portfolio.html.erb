@@ -1,0 +1,12 @@
+<p>List of my Photo Albums</p>
+<ul class="media-grid">
+  <% @albums.each do |album| %>
+	<li>
+    <a href="#">
+		<%= album.name %>
+		<%= album.photo.first.name %>
+      <img class="thumbnail" src="<%= album.name %>" alt="">
+    </a>
+  </li>
+ <% end %>
+</ul>
