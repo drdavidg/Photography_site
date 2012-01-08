@@ -1,12 +1,13 @@
 <p>List of my Photo Albums</p>
 <ul class="media-grid">
-  <% @albums.each do |album| %>
+  <% @bundles.each do |bundle| %>
 	<li>
-    <a href="#">
-		<%= album.name %>
-		<%= album.photo.first.name %>
-      <img class="thumbnail" src="<%= album.name %>" alt="">
-    </a>
+    <%= link_to bootstrap_album_url(:id => bundle.id, :title => bundle.url_title ) do %>
+		<%= bundle.name %>
+		<% if bundle.photos.first %>
+		<%= image_tag bundle.photos.first.image.url(:thumb), :class => "thumbnail" %> 
+		<% end %>
+	<% end %>
   </li>
  <% end %>
 </ul>

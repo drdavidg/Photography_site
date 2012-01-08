@@ -5,13 +5,17 @@ PhotoGallery::Application.routes.draw do
   resources :bootstraps
   
   match 'portfolio', :to => 'bootstraps#portfolio'
+  match 'album/:title/:id', :to => 'bootstraps#album', :as => 'bootstrap_album'
+  
+  
+  
   match 'about', :to => 'bootstraps#about'
   match 'contact', :to => 'bootstraps#contact'
 
     match '/signup', :to => 'users#new'
   resources :photos
 
-  resources :albums
+  resources :albums, :path => 'admin/albums'  
 
   root :to => 'bootstraps#index'
 

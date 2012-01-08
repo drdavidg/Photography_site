@@ -7,10 +7,16 @@ class BootstrapsController < ApplicationController
   end
 
   def portfolio
-    @albums = Album.all
+    @bundles = Album.all
+    
   end
   
   def show
+    
+  end
+  
+  def album
+    @album = Album.find(params[:id])
     
   end
   
